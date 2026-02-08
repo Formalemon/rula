@@ -24,3 +24,13 @@ kitty -e <path-to-rula>rula
 
 > For Terminal apps it spawns a kitty instance to run it.
 > It will remember the Launch Mode for each App if set (defaults to direct exection).
+
+## Hyprland Config
+```conf
+bind = $mainMod, SPACE, exec, pkill -x launcher || kitty --class launcher -e ~/.local/bin/rula/launcher
+
+windowrule = match:class ^(launcher)$, float on
+windowrule = match:class ^(launcher)$, center on
+windowrule = match:class ^(launcher)$, size 600 300
+windowrule = match:class ^(launcher)$, stay_focused on
+```
