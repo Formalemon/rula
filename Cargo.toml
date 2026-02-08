@@ -1,0 +1,32 @@
+[package]
+name = "rula"
+version = "0.3.0"
+edition = "2021"
+
+[dependencies]
+# Terminal Handling
+crossterm = "0.29.0"
+
+# Database & System
+dirs = "6.0.0"
+freedesktop_entry_parser = "2.0.1"
+fuzzy-matcher = "0.3.7"
+ignore = "0.4.25"
+libc = "0.2.180"
+rusqlite = "0.38.0"
+shell-words = "1.1.1"
+walkdir = "2.5.0"
+
+# Serialization for cahcing
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.149"
+
+# Parallel processing for fast fuzzy search
+rayon = "1.11.0"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
